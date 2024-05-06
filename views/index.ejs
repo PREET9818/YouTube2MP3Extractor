@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>YouTube MP3 Extractor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul style="font-size: 25px;">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Services</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="top-container">
+        <form action="/convert-mp3" method="post" id="form">
+            <h1 style="font-size: 58px;"><i class="fa-brands fa-youtube"></i>YouTube 2 MP3 Converter</h1>
+            <h4 style="color: aliceblue;font-size: x-large;">Enter the video ID</h4>
+            <div>
+                <input style="font-size: large;" type="text" name="videoID" placeholder="Video ID"><button  style="font-size: large;" id="convert-btn">Convert</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="bottom-container">
+        <% if(typeof success != "undefined" && success) { %>
+            <div class="success">
+                <p><%= song_title %></p>
+                <a href="<%= song_link %>"><button id="download-btn">DOWNLOAD</button></a>
+            </div>
+        <% } else if(typeof success != "undefined" && !success) { %>
+            <div class="errors">
+                <p><%= message %></p>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<!-- New Section for Conversion Instructions -->
+<section style="font-size: 30px;font-family:roboto; " class="conversion-instructions">
+    <h3> Very easy and fast.</h3>
+    <h4>How to convert YouTube videos to MP3?</h4>
+    <ol>
+        <li>Enter YouTube id into the search box.</li>
+        <li>Choose MP4 you want to convert and click the "Convert" button.</li>
+        <li>Wait until the conversion is completed and then click "Download" button.</li>
+        <li><a style="text-decoration: none;" href="/css/play.mp4" target="_blank"><strong>Didn't get how to use it, click me for demo</strong></a></li>
+
+    </ol>
+    <p><strong>Tip:</strong> Insert after the word "v=" until the word "&" in the box to download mp3 files from YouTube as a faster way.</p>
+</section>
+
+<div 
+class="MEDIA" id="imgs"><h2 style="font-size:50px;text-align: center;color: blue;">DEMO for "Video ID"</h2><img style="height: 650px;margin-left: 350px;
+margin-right: auto;" src="/css/data1.jpeg" alt="Placeholder Image">
+    <h2 style="font-size: 30px;font-family: Arial, sans-serif;text-align: center; color: red;">In above image, green highlighted part is copied and paste it in "Enter video ID" to get your MP3</h2></div>
+
+<!--<h2 style="margin-top: 100px;">Below is a demo how to download mp3
+</h2>
+ <video  style=" max-width: 61%; height: auto;" controls>
+    <source src="/css/play.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  
+
+<h2 style="color: brown; margin-top: 100px;text-align: center;">If above method is not working you can choose the below one to download MP3</h2>
+
+    <!-- New form for full YouTube URL 
+    <div class="top-container1">
+        <form action="/convert-mp3-url" method="post" id="form">
+            <h1><i class="fa-brands fa-youtube"></i>YouTube 2 MP3 Converter</h1>
+            <h4>Enter the full YouTube URL</h4>
+            <div>
+                <input type="text" name="videoURL" placeholder="YouTube URL"><button id="convert-btn-url">Convert</button>
+            </div>
+        </form>
+    </div>-->
+
+    <section class="bg-08003a" style="overflow-wrap:anywhere">
+      <div style="color: white;font-family: Nunito;margin-left: 100px;padding:100px;" class="container pt-5 pb-5 align-items-center color-white bg-08003a">
+      <div>
+      <h2 style="text-align: center;" class="col-12 text-center mb-3">
+      Explore the benefits of using a YouTube to MP3 Converter.</h2>
+      <h3>Quick and user-friendly.</h3>
+      <p>Our YouTube MP3 Downloader offers a speedy and simple way to download and save any YouTube video as MP3. Copy the YouTube URL, paste it in the search box, and click "Convert"</p>
+      <h3>100% Free and Unlimited MP3 conversion</h3>
+      <p>Download and convert unlimited YouTube videos into MP3 files without any restrictions or Limitations. it's always free of cost MP3 Converter.</p>
+      <h3>Completely safe and secure.</h3>
+      <p>Your privacy is our priority; we don't gather users bio-data information. Download MP3 from YouTube securely using our PBYouTube Video Converter. The downloaded file is secure and free from viruses.</p>
+      <h3>Compatible with All browser and device.</h3>
+      <p>We cater to all device platforms, making it effortless to convert YouTube videos to MP3 on Windows, Mac, Linux, Android, and iPhone. It is compatible with major browsers like Chrome, Firefox, Safari, Microsoft Edge, Opera, etc.</p>
+      <h3>High-Quality Audio Download</h3>
+      <p>This YouTube to MP3 Converter offers a wide range of MP3 (Audio) format in high qualities. Additionally, it supports other formats in future.</p>
+      <h3>Save Audio on Cloud Storage</h3>
+      <p>Our service enables the direct saving of converted MP3 (audio) files into Google Drive and Dropbox.(working on it)</p>
+      </div>
+      </div>
+      </section>
+
+
+      <section id="wrapper" class=" faq-container">
+        <h2 id="faq_header" class="text-center">FAQs</h2>
+        <div class="faq-block-closed" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="faq_wrap_line" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq_spoiler_wrap">
+        <div class="faq_border">
+        <input type="checkbox" class="faq_toggle checkbox " data-bs-toggle="collapse" data-bs-target="#collapse0" aria-expanded="false" aria-controls="collapse0">
+        <div class="faq_spoiler_title" itemprop="name">
+        <span class="faq-button-text">Q.1: What is YouTube to MP3 Converter?</span>
+        <div class="faq_icon" ></div>
+        </div>
+        <div class="faq_spoiler_content" id="collapse0" aria-labelledby="heading0" data-bs-parent="#faq" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+        YouTube to MP3 Converter is a free and fastest MP3 Downloader tool that allows you to convert YouTube videos to MP3 formats without needed software and application.
+        </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="faq_wrap_line" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq_spoiler_wrap">
+        <div class="faq_border">
+        <input type="checkbox" class="faq_toggle checkbox " data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+        <div class="faq_spoiler_title" itemprop="name">
+        <span class="faq-button-text">Q.2: Is it safe to use PBYouTube for downloading MP3 from Youtube?</span>
+        <div class="faq_icon" ></div>
+        </div>
+        <div class="faq_spoiler_content" id="collapse1" aria-labelledby="heading1" data-bs-parent="#faq" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+        PBYoutube MP3 Converter is entirely secure and safe, To download MP3 from Youtube without personal information. it does not store your data.
+        </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="faq_wrap_line" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq_spoiler_wrap">
+        <div class="faq_border">
+        <input type="checkbox" class="faq_toggle checkbox " data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+        <div class="faq_spoiler_title" itemprop="name">
+        <span class="faq-button-text">Q.3: Do I need to install any software or extensions while using PBYouTube?</span>
+        <div class="faq_icon" ></div>
+        </div>
+        <div class="faq_spoiler_content" id="collapse2" aria-labelledby="heading2" data-bs-parent="#faq" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+        Our YouTube to MP3 seamlessly works within your web browsers. No additional software or extensions are necessary to use PBYouTube.
+        </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="faq_wrap_line" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq_spoiler_wrap">
+        <div class="faq_border">
+        <input type="checkbox" class="faq_toggle checkbox " data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+        <div class="faq_spoiler_title" itemprop="name">
+        <span class="faq-button-text">Q.4: Is it possible to Convert YouTube to MP3 in High Qualities?</span>
+        <div class="faq_icon" ></div>
+        </div>
+        <div class="faq_spoiler_content" id="collapse3" aria-labelledby="heading3" data-bs-parent="#faq" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+        Our YouTube to MP3 converter enables you to convert and download MP3 from YouTube into high-quality</p>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="faq_wrap_line" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq_spoiler_wrap">
+        <div class="faq_border">
+        <input type="checkbox" class="faq_toggle checkbox " data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+        <div class="faq_spoiler_title" itemprop="name">
+        <span class="faq-button-text">Q.5: Is there any limitation to download YouTube Videos to MP3 file?</span>
+        <div class="faq_icon" ></div>
+        </div>
+        <div class="faq_spoiler_content" id="collapse4" aria-labelledby="heading4" data-bs-parent="#faq" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+        To Convert YouTube Videos to MP3 without restrictions or limitations use our YouTube to MP3 Downloader.
+        </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+
+    <section style="font-family: Arial, sans-serif;font-size: 30px;padding: 100px;text-align: center;" class="services">
+        <h2 style="color:rgb(97, 12, 167);">Our Services</h2>
+        <p style="font-size: 36px;">We offer a wide range of services to cater to your needs:</p>
+        <ul>
+          <li style="margin: 10px;"><strong>YouTube Video Downloader:</strong> Download your favorite YouTube videos with ease and convenience.</li>
+          <li style="margin: 10px;"><strong>Instagram Video Downloader:</strong> Save Instagram videos to watch offline or share with friends.</li>
+          <li style="margin: 10px;"><strong>Terabox Video Player:</strong> Stream videos directly from your Terabox cloud storage.</li>
+          <li style="margin: 10px;"><strong>Video to Audio Extractor:</strong> Extract audio from videos for listening on your music player.</li>
+          <li style="margin: 10px;"><strong >YouTube MP3 Extractor:</strong> Convert YouTube videos to MP3 format for audio enjoyment.</li>
+        </ul>
+        <p><strong>And many more services are on the way! Stay tuned for updates.</strong></p>
+      </section>
+      
+
+    <section style="font-family: Arial, sans-serif;font-size: 30px;margin-bottom: 200px;padding: 100px;" class="closing-statement">
+        <h2 style="text-align: center;color:rgb(97, 12, 167);">Experience the Difference</h2>
+        <p >Thank you for exploring our website and services. We believe in delivering quality and value to our users. Our platform is more than just a tool - it's a gateway to endless possibilities.</p>
+        <p>Whether you're here for the first time or a returning visitor, we're committed to providing you with the best experience. We're constantly evolving and improving, and we'd love for you to be a part of our journey.</p>
+        <p>Explore, enjoy, and let us know how we can make your experience even better. We appreciate your trust in us and look forward to serving you!</p>
+      </section>
+      
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+          <div class="contain">
+          <div class="col">
+            <h2>Company</h2>
+            <ul>
+              <li>About us</li>
+              
+              <li>Services</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Products</h2>
+            <ul>
+              <li>SEO</li>
+              <li>Content Development</li>
+              <li>Digital Marketing</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Team</h2>
+            <ul>
+              <li>HR Team</li>
+              <li>Finance Team</li>
+              <li>Content Team</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Resources</h2>
+            <ul>
+              <li>Webmail</li>
+              <li>Web templates</li>
+              <li>Email templates</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Contact</h2>
+            <ul>
+              <li>+91 9051 XXXXXX</li>
+              <li>033 2464 XXXX</li>
+              <li>abc@gmail.com</li>
+            </ul>
+          </div>
+
+        <div class="clearfix"></div>
+        </div>
+        </div>
+        </footer>
+        
+</body>
+</html>
